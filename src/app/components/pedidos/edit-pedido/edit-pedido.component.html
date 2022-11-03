@@ -1,0 +1,36 @@
+<div class="container my-5">
+
+    <h1 class="mb-3">Editar pedido</h1>
+
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="updateEmployee()">
+                <div class="mb-3">
+                  <label for="Id" class="form-label">Id</label>
+                  <input type="text" class="form-control" id="Id" name="Id" readonly [(ngModel)]="pedidoDetails.pedidoId">
+                </div>        
+                <div class="mb-3">
+                  <label for="nomeCliente" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="nomeCliente" name="nomeCliente" [(ngModel)]="pedidoDetails.nomeCliente">
+                </div>        
+                <div class="mb-3">
+                  <label for="emailCliente" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="emailCliente" name="emailCliente" [(ngModel)]="pedidoDetails.emailCliente">
+                </div>        
+                <div class="mb-3">
+                  <label for="valorTotal" class="form-label">Valor Total</label>
+                  <input type="number" class="form-control" id="valorTotal" name="valorTotal" [(ngModel)]="pedidoDetails.valorTotal">
+                </div>                    
+                <div class="form-check">
+                        
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"  name="pago" [(ngModel)]="pedidoDetails.pago" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Pago
+                    </label>
+                </div>                
+                <button type="submit" style="margin-top: 50px; margin-right: 10px;;" class="btn btn-primary">Salvar</button>
+                <button type="button" style="margin-top: 50px" class="btn btn-danger" (click)="deletarPedido(pedidoDetails.pedidoId)">Deletar</button>
+              </form>
+        </div>
+    </div>
+</div>
